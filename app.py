@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 # Load data
-@st.cache
+@st.cache_data
 def load_data():
     data = pd.read_csv('data.csv')
     return data

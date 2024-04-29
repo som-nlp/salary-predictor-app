@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 # Load data
-@st.cache
+@st.cache_data
 def load_data():
     data = pd.read_csv('data.csv')
     return data
@@ -25,7 +25,7 @@ def main():
     salary_pred = model.predict([[experience]])
 
     # Display predicted salary
-    st.write(f'Predicted Salary: ${salary_pred[0]:,.2f}')
+    st.write(f'Predicted Salary: Rs. {salary_pred[0]:,.2f}')
 
     st.markdown("<br><br>", unsafe_allow_html=True)
 
